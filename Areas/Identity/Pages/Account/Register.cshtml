@@ -1,0 +1,175 @@
+﻿@page
+@model RegisterModel
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Register";
+}
+<link href="~/css/site.css" rel="stylesheet" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/additional-methods.min.js"></script>
+
+<body class="login-page">
+
+    <!-- Sign-up form -->
+    <div class="container mt-5">
+        <div class="login-container">
+            <h1>Sign Up</h1>
+            <div class="form-container ">
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                   
+                    <hr />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-floating">
+                        <input asp-for="Input.FirstName" name="Input.FirstName" class="form-control" autocomplete="new-password" aria-required="true" />
+                        <label asp-for="Input.FirstName"></label>
+                        <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                    </div>
+
+                    <br />
+                    <div class="form-floating">
+                        <input asp-for="Input.LastName"   name="Input.LastName" class="form-control" autocomplete="new-password" aria-required="true" />
+                        <label asp-for="Input.LastName"></label>
+                        <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                        <input asp-for="Input.Email"  name="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                        <label asp-for="Input.Email"></label>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <br >
+                    <div class="form-floating">
+                        <input asp-for="Input.Password"   name="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                        <label asp-for="Input.Password"></label>
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <br>
+                    <div class="form-floating">
+                        <input asp-for="Input.ConfirmPassword"  name="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                        <label asp-for="Input.ConfirmPassword"></label>
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <br>
+                    <div class="form-floating">
+                        <input asp-for="Input.Country" name="Input.Country" class="form-control" autocomplete="new-password" aria-required="true" />
+                        <label asp-for="Input.Country"></label>
+                        <span asp-validation-for="Input.Country" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+                </form>
+                
+
+                <p>Already have an account? <a href="/Identity/Account/Login">Log in</a></p>
+               
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Add custom validation method for letters only
+            $.validator.addMethod("customCountryName", function (value, element) {
+                return this.optional(element) || /^[A-Za-z]+$/.test(value);
+            }, "Country name must only contain letters.");
+
+            // Add custom validator to jQuery Validate
+            $.validator.addClassRules({
+                "input-country": {
+                    customCountryName: true
+                }
+            });
+
+            $("#registerForm").validate({
+                rules: {
+                    "Input.FirstName": {
+                        required: true,
+                        minlength: 3
+                    },
+                    "Input.LastName": {
+                        required: true,
+                        minlength: 3
+                    },
+                    "Input.Country": {
+                        required: true,
+                        customCountryName: true // Use the custom method here
+                    }
+                },
+                messages: {
+                    "Input.FirstName": {
+                        required: "First Name is required.",
+                        minlength: "First Name must be at least 3 characters long."
+                    },
+                    "Input.LastName": {
+                        required: "Last Name is required.",
+                        minlength: "Last Name must be at least 3 characters long."
+                    },
+                    "Input.Country": {
+                        required: "Country is required.",
+                        customCountryName: "Country name must only contain letters."
+                    }
+                },
+                errorClass: "text-danger",
+                validClass: "text-success",
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.closest(".form-floating"));
+                },
+                
+            });
+        });
+    </script>
+   </body>
+   @*
+    <script>
+        $(document).ready(function () {
+            $("#registerForm").validate({
+                rules: {
+                    "Input.FirstName": {
+                        required: true,
+                        minlength: 3
+                    },
+                    "Input.LastName": {
+                        required: true,
+                        minlength: 3
+                    },
+                    "Input.Country": {
+                        required: true,
+                        pattern: /^[A-Z][a-z]*$/
+                    }
+                },
+                messages: {
+                    "Input.FirstName": {
+                        required: "First Name is required.",
+                        minlength: "First Name must be at least 3 characters long."
+                    },
+                    "Input.LastName": {
+                        required: "Last Name is required.",
+                        minlength: "Last Name must be at least 3 characters long."
+                    },
+                    "Input.Country": {
+                        required: "Country is required.",
+                        pattern: "Country name must start with a capital letter and only contain letters."
+                    }
+                },
+                errorClass: "text-danger",
+                validClass: "text-success",
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.closest(".form-floating"));
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass(errorClass).removeClass(validClass);
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass(errorClass).addClass(validClass);
+                }
+            });
+        });
+    </script>
+    
+
+</body>*@

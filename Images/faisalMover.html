@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Timing Schedule</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="cssMy.css">
+    
+</head>
+
+<body class="Buses">
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-custom fixed-top ">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">FAKHAR TRANSPORT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="MyWork.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="myworkAbout.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="mybooking.html">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="myworkContact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="myworkLogin.html" class="btn btn-login mx-2">Login</a>
+                <a href="myworkSighnup.html" class="btn btn-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner mt-5">
+            <div class="carousel-item active">
+                <img src="f1.png" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="f2.png" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="f3.png" class="d-block w-100" alt="Image 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container mt-5 ">
+        <div class="row justify-content-center ">
+            <div class="col-md-8">
+                <h1 class="text-center mb-4 ">Bus Timing Schedule of Faisal Movers</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Routes</th>
+                            <th>First Departure of Buses</th>
+                            <th>Last Departure of Buses</th>
+                            <th>Travel Duration</th>
+                            <th>Book Ticket</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lahore to Multan</td>
+                            <td>5:00 AM</td>
+                            <td>02:00 AM</td>
+                            <td>04 Hours</td>
+                            <td><a href="mybooking.html" class="btn btn-primary">Book</a></td>
+                        </tr>
+                        <tr>
+                            <td>Lahore to Faisalabad</td>
+                            <td>7:00 AM</td>
+                            <td>11:00 PM</td>
+                            <td>2 Hours 15 Minutes</td>
+                            <td><a href="mybooking.html" class="btn btn-primary">Book</a></td>
+                        </tr>
+                        <tr>
+                            <td>Multan to Islamabad</td>
+                            <td>7:00 AM</td>
+                            <td>12:00 AM</td>
+                            <td>06 Hours 30 Minutes</td>
+                            <td><a href="mybooking.html" class="btn btn-primary">Book</a></td>
+                        </tr>
+                        <tr>
+                            <td>Islamabad to Karachi</td>
+                            <td>10:00 AM</td>
+                            <td>11:00 PM</td>
+                            <td>18 Hours 30 Minutes</td>
+                            <td><a href="mybooking.html" class="btn btn-primary">Book</a></td>
+                        </tr>
+                        <tr>
+                            <td>Lahore to Karachi</td>
+                            <td>10:00 AM</td>
+                            <td>12:00 AM</td>
+                            <td>16 Hours 30 Minutes</td>
+                            <td><a href="mybooking.html" class="btn btn-primary">Book</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="text-center mb-4">Faisal Movers Bus Routes and Terminals</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Route</th>
+                            <th>Terminal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Islamabad – Bahawalpur</td>
+                            <td>Motorway M4 – M2</td>
+                        </tr>
+                        <tr>
+                            <td>Lahore – DG Khan</td>
+                            <td>Motorway M-3 , Multan</td>
+                        </tr>
+                        <tr>
+                            <td>Lahore – Bahawalpur</td>
+                            <td>M-3 , Khanewal, Jahanian</td>
+                        </tr>
+                        <tr>
+                            <td>Islamabad – Hunza</td>
+                            <td>Naran</td>
+                        </tr>
+                        <tr>
+                            <td>Lahore – Swat</td>
+                            <td>Motorway M-2 , M-1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 FAKHAR TRANSPORT. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

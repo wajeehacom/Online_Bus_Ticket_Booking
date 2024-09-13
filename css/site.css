@@ -1,0 +1,936 @@
+
+
+/* Custom CSS styles */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #ffffff;
+    /* White color for navbar brand */
+}
+/* Custom navbar color */
+.bg-custom {
+    background-color: #008080;
+}
+
+
+.btn-login, .btn-signup {
+    background-color: #fff;
+    color: #008080;
+    /* Red color for signup button text */
+    border: 1px solid #008080;
+}
+
+    .btn-login:hover,
+    .btn-signup:hover {
+        color: #fff;
+    }
+
+
+video {
+    margin-top: 70px; /* Adjust this value according to your needs */
+}
+
+
+
+
+
+
+.section-part {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+    .section-part video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.overlay-content {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.btn-get-ticket {
+    background-color: #008080;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+
+
+
+    .section-part h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #ffffff;
+        /* White color for heading */
+        animation: textAnimation 3s infinite alternate;
+        /* CSS animation */
+    }
+
+@keyframes textAnimation {
+    from {
+        transform: translateY(-10px);
+        /* Move the text up */
+    }
+
+    to {
+        transform: translateY(10px);
+        /* Move the text down */
+    }
+}
+.footer-page {
+    background-color: #008080;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    /* Add margin above footer */
+}
+
+    .footer-page p {
+        margin-bottom: 0;
+        flex: 1;
+    }
+
+
+
+
+
+
+/* Custom button style */
+.btn-get-ticket {
+    background-color: #008080;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+    .btn-get-ticket:hover {
+        background-color: #008080;
+        color: #fff;
+    }
+
+/* Centering the heading */
+.partner-heading,
+.logo-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    /* Add margin between sections */
+}
+
+/* Adjusting logo layout */
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    /* Center align the logos */
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Add space between logos */
+    margin-bottom: 50px;
+    /* Add margin between logos and cards */
+}
+
+    .partner-logos img {
+        height: 100px;
+        /* Set the height as per your requirement */
+        margin-top: 10px;
+        /* Add margin for spacing from the top */
+        cursor: pointer;
+        /* Add cursor pointer */
+        border: 2px solid #008080;
+        /* Red border */
+    }
+
+/* Equal height cards */
+.card {
+    height: 100%;
+    border: 2px solid #008080;
+    /* Red border */
+    margin-bottom: 30px;
+    /* Add margin between cards */
+}
+
+/* Light red color for text */
+body,
+p,
+.card-title,
+.card-text {
+    color: #151313;
+}
+
+/* Light red background color for partnership container */
+.partnership-container {
+    background-color: #f9f8f8;
+    /* Light red background color */
+    padding: 20px;
+    /* Add padding to the container */
+    margin-bottom: 50px;
+    /* Add margin to the container */
+}
+
+
+.card-img-top {
+    transition: transform 0.3s ease;
+}
+
+    .card-img-top:hover {
+        transform: scale(1.1);
+    }
+
+
+
+/*about*/
+body {
+    background-color: #faf4f4;
+   
+}
+
+.about-1 {
+    margin: 30px;
+    padding: 50px;
+}
+
+    .about-1 h1 {
+        text-align: center;
+        color: black;
+        font-weight: bold;
+    }
+
+    .about-1 p {
+        text-align: center;
+        padding: 3px;
+        color: #110707;
+    }
+
+.about-item {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #008080;
+    padding: 80px,30px;
+    box-shadow: 0 0 9px rgba(0,0,0 .6);
+}
+
+    .about-item i {
+        font-size: 43px;
+        margin: 0;
+    }
+
+    .about-item h3 {
+        font-size: 25px;
+        color: #f9f8f8;
+        margin-bottom: 10px;
+    }
+
+    .about-item hr {
+        width: 46px;
+        height: 3px;
+        background-color: #008080;
+        margin: 0 auto;
+        border: none;
+    }
+
+    .about-item p {
+        margin-top: 20px;
+        color: #f9f8f8;
+        height: 200px; /* Set a fixed height for the <p> elements */
+        overflow-y: auto; /* Add vertical scroll if content exceeds the height */
+        padding: 20px; /* Add padding to the <p> elements for better readability */
+    }
+
+    .about-item:hover {
+        background-color: #fad7d7;
+    }
+
+        .about-item:hover i,
+        .about-item:hover h3,
+        .about-item:hover p {
+            color: #008080;
+        }
+
+        .about-item:hover hr {
+            background-color: #008080;
+        }
+
+        .about-item:hover i {
+            transform: translateY(-20px);
+        }
+
+        .about-item:hover i,
+        .about-item:hover h3,
+        .about-item:hover hr {
+            transition: all 400ms ease-in-out;
+        }
+
+
+.carousel-item img {
+    height: 400px; /* Adjust the height as needed */
+    width: 100%; /* Set width to 100% for responsiveness */
+    object-fit: cover; /* Ensure the image covers the entire carousel item */
+}
+
+.carousel-caption p {
+    height: 100px; /* Set a fixed height for the <p> elements */
+    overflow-y: auto; /* Add vertical scroll if content exceeds the height */
+}
+
+
+/* contact*/
+
+/* Custom CSS for centering and layout */
+.container-fluid {
+    padding-top: 50px; /* Adjust the top padding to create space between navbar and content */
+    padding-bottom: 50px; /* Add padding at the bottom */
+    color: #f9f8f8;
+}
+
+h1 {
+    text-align: center; /* Center align the heading */
+}
+
+.contact-info {
+    margin-bottom: 20px; /* Add some space below the contact info */
+}
+
+    .contact-info p {
+        color: #ffffff; /* Set text color to white */
+    }
+
+.contact-form {
+    background-color: #f9f9f9; /* Light background color for the form */
+    padding: 20px; /* Add padding to the form */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+/* CSS for contact page background */
+
+/* CSS for contact page background */
+.contact-page {
+    background-image: url('../Images/backgorundProject.png');
+    background-color: rgba(7, 7, 7, 0.5); /* Adjust the last parameter for transparency */
+    background-blend-mode: overlay; /* Blend the background image with the color */
+    /* Adjust other background properties as needed */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative; /* Add this to make the container positioned relative */
+}
+
+.contact-form {
+    background-color: rgba(248, 235, 235, 0.7); /* Transparent background color for the form */
+    padding: 20px; /* Add padding to the form */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        background-color: rgba(255, 255, 255, 0.7); /* Transparent background color for input fields */
+        border: 1px solid #ccc; /* Add border for input fields */
+        border-radius: 5px; /* Add rounded corners for input fields */
+        padding: 10px; /* Add padding to input fields */
+    }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            outline: none; /* Remove focus outline */
+        }
+
+
+
+
+
+
+.contact-page .btn-login,
+.contact-page .btn-signup {
+    background-color: #fff;
+    color: #008080;
+    /* Red color for signup button text */
+    border: 1px solid #008080
+    /* Apply different styles for login and signup buttons on the contact page */
+}
+
+    .contact-page .btn-login:hover,
+    .contact-page .btn-signup:hover {
+        color: #fff;
+        /* Apply different styles for login and signup buttons on hover on the contact page */
+    }
+/* Content inside the contact page */
+.contact-content {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff; /* Set text color to white for visibility */
+    /* Add any other styles for the content */
+}
+
+/* Custom CSS for sign-up and login forms */
+/* Specific CSS styles for the login page */
+
+.login-page .btn-login,
+.login-page .btn-signup {
+    background-color: #fff;
+    color: #008080;
+    /* Red color for signup button text */
+    border: 1px solid #008080
+    /* Apply different styles for login and signup buttons on the contact page */
+}
+
+    .login-page .btn-login:hover,
+    .login-page .btn-signup:hover {
+        color: #fff;
+        /* Apply different styles for login and signup buttons on hover on the contact page */
+    }
+
+
+/* Style the login heading */
+.login-container .h1 {
+    text-align: center; /* Center align the heading */
+    margin-top: 50px; /* Add space between the heading and navbar */
+    color: #f2e9e9 !important; /* White color for the heading */
+    font-weight: bold; /* Make the heading bold */
+}
+
+
+/* Background image transparency */
+.login-page {
+    background-image: url('../Images/backgorundProject.png'); /* Add your background image path */
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the last parameter for transparency */
+    background-blend-mode: overlay; /* Blend the background image with the color */
+    /* Adjust other background properties as needed */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    position: relative; /* Add this to make the container positioned relative */
+}
+
+/* Adjust the position of the form */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+    height: calc(100vh - 100px); /* Adjust the height of the container */
+}
+
+/* Make the form transparent */
+.form-container {
+    background-color: rgba(161, 223, 251, 0.5); /* Transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; /* Adjust the width as needed */
+    margin-top: 20px; /* Add space between the heading and form */
+}
+
+
+/* for booking*/
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1000;
+}
+
+.booking-page .btn-login,
+.booking-page .btn-signup {
+    background-color: #fff;
+    color: #008080;
+    /* Red color for signup button text */
+    border: 1px solid #008080
+    /* Apply different styles for login and signup buttons on the contact page */
+}
+
+    .booking-page .btn-login:hover,
+    .booking-page .btn-signup:hover {
+        color: #fff;
+        /* Apply different styles for login and signup buttons on hover on the contact page */
+    }
+
+.booking-page table {
+    background-color: #ffffff; /* White background for the table */
+}
+
+.booking-page th,
+.booking-page td {
+    color: #000000; /* Black text color for table header and data cells */
+}
+
+
+/* servuse*/
+
+.wrapper {
+    width: 80%;
+    margin: 150px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.single-box {
+    width: 300px;
+    height: 400px;
+    margin-bottom: 50px;
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+    .content h2 {
+        margin: 20px 0;
+        font-family: 'Yatra One', sans-serif; /* Use Google font Yatra One */
+        font-size: 24px;
+    }
+
+    .content p {
+        margin-bottom: 20px;
+        font-family: 'Munito', sans-serif; /* Use Google font Munito */
+        font-size: 14px;
+    }
+
+    .content a {
+        text-decoration: none;
+        background: #008080; /* Teal color */
+        color: #fff;
+        padding: 10px 20px;
+        display: inline-block;
+        border-radius: 25px; /* Slightly rounded corners */
+        text-transform: uppercase;
+        font-family: 'Yatra One', sans-serif; /* Use Google font Yatra One */
+    }
+
+
+
+/* Your existing CSS code here */
+
+/* Additional styles for service icons */
+.icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background: #008080; /* Light gray background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(4, 3, 3, 0.1); /* Soft shadow */
+}
+
+
+single-box {
+    background-color: #043434;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.single-box:hover {
+    transform: scale(1.1);
+}
+
+.single-box .icon {
+    margin-bottom: 20px;
+}
+
+    .single-box .icon svg {
+        width: 50px;
+        height: 50px;
+        fill: #84b5b5;
+    }
+
+.single-box .content h2 {
+    margin-bottom: 10px;
+    color: #84b5b5;
+}
+
+.single-box .content p {
+    color: #196060;
+}
+
+/*buses*/
+
+.Buses .body {
+    padding-top: 80px; /* Adjust this value as needed */
+}
+
+.Buses .carousel-inner img {
+    /* Adjust the maximum height as needed */
+    height: 500px;
+    width: auto;
+}
+
+
+/* sats
+
+*/
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient( to right, rgb(162, 216, 162), rgb(102, 194, 102) );
+}
+
+.tickets {
+    width: 550px;
+    height: fit-content;
+    border: 0.4mm solid rgba(0, 0, 0, 0.08);
+    border-radius: 3mm;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: poppins;
+    max-height: 96vh;
+    overflow: auto;
+    background: white;
+    box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.ticket-selector {
+    background: rgb(243, 243, 243);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.seats {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 150px;
+    position: relative;
+}
+
+.status {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.seats::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 220px;
+    height: 7px;
+    background: rgb(141, 198, 255);
+    border-radius: 0 0 3mm 3mm;
+    border-top: 0.3mm solid rgb(180, 180, 180);
+}
+
+.item {
+    font-size: 12px;
+    position: relative;
+}
+
+    .item::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -12px;
+        transform: translate(0, -50%);
+        width: 10px;
+        height: 10px;
+        background: rgb(255, 255, 255);
+        outline: 0.2mm solid rgb(120, 120, 120);
+        border-radius: 0.3mm;
+    }
+
+    .item:nth-child(2)::before {
+        background: rgb(180, 180, 180);
+        outline: none;
+    }
+
+    .item:nth-child(3)::before {
+        background: rgb(28, 185, 120);
+        outline: none;
+    }
+
+.all-seats {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 15px;
+    margin: 60px 0;
+    margin-top: 20px;
+    position: relative;
+}
+
+.seat {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 0.5mm;
+    outline: 0.3mm solid rgb(180, 180, 180);
+    cursor: pointer;
+}
+
+.all-seats input:checked + label {
+    background: rgb(28, 185, 120);
+    outline: none;
+}
+
+.seat.booked {
+    background: rgb(180, 180, 180);
+    outline: none;
+}
+
+input {
+    display: none;
+}
+
+.timings {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.dates {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dates-item {
+    width: 50px;
+    height: 40px;
+    background: rgb(233, 233, 233);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 2mm;
+    cursor: pointer;
+}
+
+.day {
+    font-size: 12px;
+}
+
+.times {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.time {
+    font-size: 14px;
+    width: fit-content;
+    padding: 7px 14px;
+    background: rgb(233, 233, 233);
+    border-radius: 2mm;
+    cursor: pointer;
+}
+
+.timings input:checked + label {
+    background: rgb(28, 185, 120);
+    color: white;
+}
+
+.price {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+    .total span {
+        font-size: 11px;
+        font-weight: 400;
+    }
+
+.price button {
+    background: rgb(60, 60, 60);
+    color: white;
+    font-family: poppins;
+    font-size: 14px;
+    padding: 7px 14px;
+    border-radius: 2mm;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/*for seats*/
+
+.seat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+
+.assigned {
+    background-color: red;
+}
+
+.available {
+    background-color: green;
+    cursor: pointer;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.legend-assigned {
+    background-color: red;
+}
+
+.legend-available {
+    background-color: green;
+}
+
+.seat-box {
+    display: inline-block;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+//
+
+
+.section-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+    .section-content h2 {
+        font-size: 3em; /* Adjust font size as needed */
+        margin-bottom: 20px;
+    }
+
+    .section-content ul {
+        text-align: left;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .section-content li {
+        font-size: 1.5em; /* Adjust font size as needed */
+        line-height: 1.6; /* Adjust line height as needed */
+    }
+
+    .section-content img {
+        max-width: 100%;
+        height: auto;
+        max-height: 300px; /* Adjust height as needed */
+    }
+
+    /*for searhc*/
+.search-heading {
+    color: white;
+}
+
+.search-label {
+    color: white;
+}
