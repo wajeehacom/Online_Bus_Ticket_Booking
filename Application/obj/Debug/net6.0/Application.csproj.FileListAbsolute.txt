@@ -1,0 +1,15 @@
+D:\MVC\Regstration\Application\bin\Debug\net6.0\Application.deps.json
+D:\MVC\Regstration\Application\bin\Debug\net6.0\Application.dll
+D:\MVC\Regstration\Application\bin\Debug\net6.0\Application.pdb
+D:\MVC\Regstration\Application\bin\Debug\net6.0\Domain.dll
+D:\MVC\Regstration\Application\bin\Debug\net6.0\Domain.pdb
+D:\MVC\Regstration\Application\obj\Debug\net6.0\Application.csproj.AssemblyReference.cache
+D:\MVC\Regstration\Application\obj\Debug\net6.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\MVC\Regstration\Application\obj\Debug\net6.0\Application.AssemblyInfoInputs.cache
+D:\MVC\Regstration\Application\obj\Debug\net6.0\Application.AssemblyInfo.cs
+D:\MVC\Regstration\Application\obj\Debug\net6.0\Application.csproj.CoreCompileInputs.cache
+D:\MVC\Regstration\Application\obj\Debug\net6.0\Application.csproj.CopyComplete
+D:\MVC\Regstration\Application\obj\Debug\net6.0\Application.dll
+D:\MVC\Regstration\Application\obj\Debug\net6.0\refint\Application.dll
+D:\MVC\Regstration\Application\obj\Debug\net6.0\Application.pdb
+D:\MVC\Regstration\Application\obj\Debug\net6.0\ref\Application.dll
