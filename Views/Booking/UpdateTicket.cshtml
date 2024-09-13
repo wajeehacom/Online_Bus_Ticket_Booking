@@ -1,0 +1,106 @@
+﻿
+
+<body class="booking-page">
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <!-- Your main content goes here -->
+        <h1 class="text-center">Welcome to FAKHAR TRANSPORT</h1>
+        <p class="text-center">We provide convenient and reliable bus transportation services.</p>
+    </div>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+
+        <div class="video-container">
+        <partial name="_MyPartialView" />
+        @*<div class="video-container">
+            <!-- Background video -->
+            <video autoplay muted loop id="background-video">
+                <source src="~/Images/v.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>*@
+
+            <div class="container text-center text-white position-absolute top-50 start-50 translate-middle">
+                <h2 class="mb-4"> Update Book Your Bus Ticket</h2>
+
+                <!-- Booking Form -->
+               @* <form  method="post" action="/AddBuses/Seats" >*@
+                <form method="post" action="/Booking/UpdateBooking">
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label for="departure">From</label>
+                            <input type="text" id="departure" name="F" class="form-control" placeholder="Departure location" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="arrival">To</label>
+                            <input type="text" id="arrival" name="T" class="form-control" placeholder="Arrival location" required>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label for="date">Departure Date</label>
+                            <input type="date" id="date" name="D" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="bus-type">Bus Type</label>
+                            <select id="bus-type" name="B" class="form-select" required>
+                                <option value="Fakhar Transport">Fakhar Transport</option>
+                                <option value="SkyMovers">SkyMovers</option>
+                                <option value="Faisal Movers">Faisal Movers</option>
+                                <option value="Daewoo">Daewoo</option>
+                                <option value="Niazi Express">Niazi Express</option>
+                                <!-- Add more options for different bus types if needed -->
+                            </select>
+                            
+                        </div>
+                    </div>
+
+
+
+
+
+                  
+
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="N" class="form-control" placeholder="Your name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="Ph" class="form-control" placeholder="Your phone number" required>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                       
+                        <div class="col-md-6">
+                            <label for="passenger">Passenger</label>
+                            
+                                
+
+                                <select id="passenger" name="Pas" class="form-select" required>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <!-- Add more options for different numbers of passengers if needed -->
+                                </select>
+
+                              
+                                <!-- Add more options for different numbers of passengers if needed -->
+                        </div>s
+                    </div>
+                    <!-- Add more input fields for bus type, etc. as needed -->
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary btn-lg">Search Buses</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+
+
+

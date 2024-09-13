@@ -1,0 +1,132 @@
+﻿
+
+@model List<Domain.Entities.Buses>
+@{
+    Layout = "_Layout2";
+}
+<body class="booking-page">
+    <div class="container mt-5 pt-5">
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert alert-danger">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+
+        <h2 class="text-center text-white mt-5"> Available Buses</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>BusName</th>
+                        <th>BusNumber</th>
+
+                      
+                        <th>PhoneNumber</th>
+                        <th>Ticket Price</th>
+                        <th>Timing</th>
+                 
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var Buses in Model)
+                    {
+                        <tr>
+                            <td>@Buses.BusName</td>
+                            <td>@Buses.BusNumber</td>
+                           
+                            <td>@Buses.PhoneNumber</td>
+                            <td>@Buses.TicketPrice</td>
+                            <td>@Buses.Timing</td>
+                            <td>
+                                <a href="@Url.Action("SeatNumbers", "ListOfBuses", new { busName = Buses.BusName, busNumber = Buses.BusNumber, phoneNumber = Buses.PhoneNumber, ticketPrice = Buses.TicketPrice, timing = Buses.Timing, image = Buses.Image })" class="btn btn-primary">Select</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <video autoplay muted loop id="background-video" style="position: fixed; z-index: -1000; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+        <source src="~/Images/v.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+
+@*
+
+
+@{
+    Layout = "_Layout";
+}
+<body class="booking-page">
+    <div class="container mt-5 pt-5">
+        <h2 class="text-center text-white mt-5">Available Buses</h2>
+        <div class="table-responsive">
+            <table class="table table-striped" id="busesTable">
+                <thead>
+                    <tr>
+                        <th>BusName</th>
+                        <th>BusNumber</th>
+                        <th>PhoneNumber</th>
+                        <th>Ticket Price</th>
+                        <th>Timing</th>
+                        <th>Departure Location</th>
+                        <th>Arrival Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Buses data will be populated here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <video autoplay muted loop id="background-video" style="position: fixed; z-index: -1000; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+        <source src="~/Images/v.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Url.Action("ShowInfo", "AddBuses")',
+                method: 'GET',
+                success: function (data) {
+                    var tbody = $('#busesTable tbody');
+                    tbody.empty();
+
+                    $.each(data, function (index, bus) {
+                        var row = '<tr>' +
+                            '<td>' + bus.busName + '</td>' +
+                            '<td>' + bus.busNumber + '</td>' +
+                            '<td>' + bus.phoneNumber + '</td>' +
+                            '<td>' + bus.ticketPrice + '</td>' +
+                            '<td>' + bus.timing + '</td>' +
+                            '<td>' + bus.departureLocation + '</td>' +
+                            '<td>' + bus.arrivalLocation + '</td>' +
+                            '<td>' +
+                            '<a href="@Url.Action("SeatNumbers", "ListOfBuses", new { busName = "_busName_", busNumber = "_busNumber_", phoneNumber = "_phoneNumber_", ticketPrice = "_ticketPrice_", timing = "_timing_", image = "_image_" })" class="btn btn-primary">Select</a>' +
+                            '</td>' +
+                            '</tr>';
+                        row = row.replace('_busName_', bus.busName)
+                            .replace('_busNumber_', bus.busNumber)
+                            .replace('_phoneNumber_', bus.phoneNumber)
+                            .replace('_ticketPrice_', bus.ticketPrice)
+                            .replace('_timing_', bus.timing)
+                            .replace('_image_', bus.image);
+
+                        tbody.append(row);
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error fetching buses:', error);
+                }
+            });
+        });
+    </script>
+</body>
+
+*@

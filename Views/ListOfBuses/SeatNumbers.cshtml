@@ -1,0 +1,552 @@
+﻿@*
+//corrct
+
+@model SeatViewModel
+
+@{
+    Layout = "_Layout1";
+}
+<body class="seat-page">
+    <div class="container">
+        <h1 class="my-4">Seat Numbers</h1>
+
+        <div class="d-flex justify-content-center mb-4">
+            <div class="legend-item mr-4 d-flex align-items-center">
+                <div class="legend-color legend-assigned"></div>
+                <span>Assigned</span>
+            </div>
+            <div class="legend-item d-flex align-items-center">
+                <div class="legend-color legend-available"></div>
+                <span>Available</span>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div class="seat-box p-4 border rounded bg-light shadow">
+                <div class="row">
+       
+
+                    @for (int i = 0; i < Model.SeatNumbers.Length; i++)
+                    {
+                        <div class="col-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center">
+                            @if (Model.SeatAssignments[i])
+                            {
+                                <div class="seat assigned">@Model.SeatNumbers[i]</div>
+                            }
+                            else
+                            {
+                                <form method="post" asp-action="BookSeat">
+                                    <input type="hidden" name="seatNumber" value="@Model.SeatNumbers[i]" />
+                                    <button type="submit" class="seat available">@Model.SeatNumbers[i]</button>
+                                </form>
+                            }
+                        </div>
+                    }
+
+                   
+                </div>
+            </div>
+               </div>
+        <div class="text-center my-4">
+            <h3>Selected Seats:</h3>
+            @for (int i = 0; i < Model.SeatNumbers.Length; i++)
+            {
+                if (Model.SeatAssignments[i])
+                {
+                    <div class="seat assigned">@Model.SeatNumbers[i]</div>
+                }
+            }
+        </div>
+
+
+        <div class="text-center my-4">
+         
+            
+           
+            <p>Selected Seats: @Model.SelectedSeatCount</p>
+
+        </div>
+    <div class="row">
+        <div class="col text-left">
+            <form method="post" action="/ListOfBuses/UpdateSeats">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+        <div class="col text-right">
+            <form method="get" action="/Booking/SelectedBus">
+                <button type="submit" class="btn btn-primary">Next</button>
+            </form>
+        </div>
+    </div>
+       
+        
+    </div>
+
+    </body>
+
+@section Scripts {
+    <script src="D:\MVC\Regstration\Regstration\wwwroot\lib\signalr\dist\browser\signalr.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var connection = new signalR.HubConnectionBuilder().withUrl("/SeatHub").build();
+
+            connection.start().then(function () {
+                console.log("SignalR Connected.");
+            }).catch(function (err) {
+                return console.error(err.toString());
+            });
+
+            connection.on("ReceiveSeatBooking", function (seatNumber) {
+                var seatElement = $(".seat.available").filter(function () {
+                    return $(this).text() == seatNumber;
+                });
+
+                if (seatElement.length) {
+                    seatElement.replaceWith('<div class="seat assigned">' + seatNumber + '</div>');
+                    alert("Seat " + seatNumber + " has just been booked by another user.");
+                }
+            });
+        });
+    </script>
+}
+
+*@
+
+
+@*
+
+@model SeatViewModel
+
+@{
+    Layout = "_Layout1";
+}
+<body class="seat-page">
+    <div class="container">
+        <h1 class="my-4">Seat Numbers</h1>
+
+        <div class="d-flex justify-content-center mb-4">
+            <div class="legend-item mr-4 d-flex align-items-center">
+                <div class="legend-color legend-assigned"></div>
+                <span>Assigned</span>
+            </div>
+            <div class="legend-item d-flex align-items-center">
+                <div class="legend-color legend-available"></div>
+                <span>Available</span>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div class="seat-box p-4 border rounded bg-light shadow">
+                <div class="row">
+                    @for (int i = 0; i < Model.SeatNumbers.Length; i++)
+                    {
+                        <div class="col-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center">
+                            @if (Model.SeatAssignments[i])
+                            {
+                                <div class="seat assigned">@Model.SeatNumbers[i]</div>
+                            }
+                            else
+                            {
+                                <form method="post" asp-action="BookSeat">
+                                    <input type="hidden" name="seatNumber" value="@Model.SeatNumbers[i]" />
+                                    <button type="submit" class="seat available">@Model.SeatNumbers[i]</button>
+                                </form>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center my-4">
+            <h3>Selected Seats:</h3>
+            @for (int i = 0; i < Model.SeatNumbers.Length; i++)
+            {
+                if (Model.SeatAssignments[i])
+                {
+                    <div class="seat assigned">@Model.SeatNumbers[i]</div>
+                }
+            }
+        </div>
+
+        <div class="text-center my-4">
+            <p>Selected Seats: @Model.SelectedSeatCount</p>
+        </div>
+
+        <div class="row">
+            <div class="col text-left">
+                <form method="post" action="/ListOfBuses/UpdateSeats">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+            <div class="col text-right">
+                <form method="get" action="/Booking/SelectedBus">
+                    <button type="submit" class="btn btn-primary">Next</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+@section Scripts {
+    <script src="~/lib/signalr/dist/browser/signalr.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var connection = new signalR.HubConnectionBuilder().withUrl("/SeatHub").build();
+
+            connection.start().then(function () {
+                console.log("SignalR Connected.");
+                document.getElementById("sendButton").disabled = false;
+            }).catch(function (err) {
+                return console.error(err.toString());
+            });
+
+            connection.on("ReceiveSeatBooking", function (seatNumber) {
+                var seatElement = $(".seat.available").filter(function () {
+                    return $(this).text() == seatNumber;
+                });
+
+                if (seatElement.length) {
+                    seatElement.replaceWith('<div class="seat assigned">' + seatNumber + '</div>');
+                    alert("Seat " + seatNumber + " has just been booked by another user.");
+                }
+            });
+        });
+    </script>
+}*@
+
+@*
+
+
+@model SeatViewModel
+
+@{
+    Layout = "_Layout1";
+}
+
+<body class="seat-page">
+    <div class="container ">
+     
+        <br />
+        
+        <br />
+        
+        <br />
+        
+        <br />
+        
+
+        <br />
+        <h1 style="margin-top: 100px;" class="my-4">Seat Numbers</h1>
+
+       
+
+        <div class="d-flex justify-content-center mb-4">
+            <div class="legend-item mr-4 d-flex align-items-center">
+                <div class="legend-color legend-assigned"></div>
+                <span>Assigned</span>
+            </div>
+            <div class="legend-item d-flex align-items-center">
+                <div class="legend-color legend-available"></div>
+                <span>Available</span>
+            </div>
+        </div>
+
+
+        <div class="d-flex justify-content-center">
+            <div class="seat-box p-4 border rounded bg-light shadow">
+                <div class="row">
+                    @for (int i = 0; i < Model.SeatNumbers.Length; i++)
+                    {
+                        <div class="col-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center">
+                            @if (Model.SeatAssignments[i])
+                            {
+                                <div class="seat assigned">@Model.SeatNumbers[i]</div>
+                            }
+                            else
+                            {
+                                <form  id="seatBookingForm" method="post" asp-action="BookSeat">
+                                    <input type="hidden" name="seatNumber" value="@Model.SeatNumbers[i]" />
+                                    <button type="submit" class="seat available">@Model.SeatNumbers[i]</button>
+                                </form>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center my-4">
+            <h3>Selected Seats:</h3>
+            @for (int i = 0; i < Model.SeatNumbers.Length; i++)
+            {
+                if (Model.SeatAssignments[i])
+                {
+                    <div class="seat assigned">@Model.SeatNumbers[i]</div>
+                }
+            }
+        </div>
+
+        <div class="text-center my-4">
+            <p>Selected Seats: @Model.SelectedSeatCount</p>
+        </div>
+
+        <div class="row">
+            <div class="col text-left">
+                <form method="post" action="/ListOfBuses/UpdateSeats">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+            <div class="col text-right">
+                <form method="get" action="/Booking/SelectedBus">
+                    <button type="submit" class="btn btn-primary">Next</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#seatBookingForm').on('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var form = $(this);
+            $.ajax({
+                url: form.attr('action'),
+                type: form.attr('method'),
+                data: form.serialize(),
+                success: function (response) {
+                    // Show alert with message from the server response
+                    alert(response.message);
+                    // No redirection, only show the message
+                },
+                error: function () {
+                    // Show alert for server errors
+                    alert("An error occurred while booking the seat.");
+                }
+            });
+        });
+    });
+</script>*@
+
+
+@*
+
+
+@model SeatViewModel
+
+@{
+    Layout = "_Layout1";
+}
+
+<body class="seat-page">
+    <div class="container">
+        <h1 class="my-4">Seat Numbers</h1>
+
+        <div class="d-flex justify-content-center mb-4">
+            <div class="legend-item mr-4 d-flex align-items-center">
+                <div class="legend-color legend-assigned"></div>
+                <span>Assigned</span>
+            </div>
+            <div class="legend-item d-flex align-items-center">
+                <div class="legend-color legend-available"></div>
+                <span>Available</span>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div class="seat-box p-4 border rounded bg-light shadow">
+                <div class="row">
+                    @for (int i = 0; i < Model.SeatNumbers.Length; i++)
+                    {
+                        <div class="col-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center">
+                            @if (Model.SeatAssignments[i])
+                            {
+                                <div class="seat assigned">@Model.SeatNumbers[i]</div>
+                            }
+                            else
+                            {
+                                <form id="seatBookingForm" method="post" asp-action="BookSeat">
+                                    <input type="hidden" name="seatNumber" value="@Model.SeatNumbers[i]" />
+                                    <button type="submit" class="seat available">@Model.SeatNumbers[i]</button>
+                                </form>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center my-4">
+            <h3>Selected Seats:</h3>
+            @for (int i = 0; i < Model.SeatNumbers.Length; i++)
+            {
+                if (Model.SeatAssignments[i])
+                {
+                    <div class="seat assigned">@Model.SeatNumbers[i]</div>
+                }
+            }
+        </div>
+
+        <div class="text-center my-4">
+            <p>Selected Seats: @Model.SelectedSeatCount</p>
+        </div>
+
+        <div class="row">
+            <div class="col text-left">
+                <form method="post" action="/ListOfBuses/UpdateSeats">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+            <div class="col text-right">
+                <form method="get" action="/Booking/SelectedBus">
+                    <button type="submit" class="btn btn-primary">Next</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Your custom script -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#seatBookingForm').on('submit', function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                var form = $(this);
+                $.ajax({
+                    url: form.attr('action'),
+                    type: form.attr('method'),
+                    data: form.serialize(),
+                    success: function (response) {
+                        // Show alert with message from the server response
+                        alert(response.message);
+                        // No redirection, only show the message
+                    },
+                    error: function () {
+                        // Show alert for server errors
+                        alert("An error occurred while booking the seat.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+
+
+*@
+
+
+@model SeatViewModel
+
+@{
+    Layout = "_Layout1";
+}
+
+<body class="seat-page">
+    <div class="container">
+        <h1 class="my-4">Seat Numbers</h1>
+
+        <div class="d-flex justify-content-center mb-4">
+            <div class="legend-item mr-4 d-flex align-items-center">
+                <div class="legend-color legend-assigned"></div>
+                <span>Assigned</span>
+            </div>
+            <div class="legend-item d-flex align-items-center">
+                <div class="legend-color legend-available"></div>
+                <span>Available</span>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div class="seat-box p-4 border rounded bg-light shadow">
+                <div class="row">
+                    @for (int i = 0; i < Model.SeatNumbers.Length; i++)
+                    {
+                        <div class="col-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center">
+                            @if (Model.SeatAssignments[i])
+                            {
+                                <div class="seat assigned">@Model.SeatNumbers[i]</div>
+                            }
+                            else
+                            {
+                                <form id="seatBookingForm" method="post" action="/ListOfBuses/BookSeat">
+                                    <input type="hidden" name="seatNumber" value="@Model.SeatNumbers[i]" />
+                                    <button type="submit" class="seat available">@Model.SeatNumbers[i]</button>
+                                </form>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center my-4">
+            <h3>Selected Seats:</h3>
+            @for (int i = 0; i < Model.SeatNumbers.Length; i++)
+            {
+                if (Model.SeatAssignments[i])
+                {
+                    <div class="seat assigned">@Model.SeatNumbers[i]</div>
+                }
+            }
+        </div>
+
+        <div class="text-center my-4">
+            <p>Selected Seats: @Model.SelectedSeatCount</p>
+        </div>
+
+        <div class="row">
+            <div class="col text-left">
+                <form method="post" action="/ListOfBuses/UpdateSeats">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+            <div class="col text-right">
+                <form method="get" action="/Booking/SelectedBus">
+                    <button type="submit" class="btn btn-primary">Next</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Attach a submit event handler to the form
+            $('#seatBookingForm').on('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission form.attr('action'), form.attr('method'), and form.serialize() are jQuery methods
+
+                var form = $(this);
+                $.ajax({
+                    url: form.attr('action'),
+                    type: form.attr('method'),
+                    data: form.serialize(), // Serialize the form data
+                    success: function (response) {
+                        // Show alert with message from the server response
+                        alert(response);
+                    },
+                    error: function () {
+                        // Show alert for server errors
+                        alert("An error occurred while booking the seat.");
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Your custom script -->
+   
+</body>
+
+
+
+
+

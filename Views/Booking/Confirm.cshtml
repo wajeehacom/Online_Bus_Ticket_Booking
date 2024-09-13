@@ -1,0 +1,85 @@
+﻿@model Domain.Entities.BookingBuses
+
+@{
+    Layout = "_Layout";
+}
+
+<style>
+    .card {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card-content {
+        flex: 1;
+        padding: 10px;
+    }
+
+    .booking-info {
+        border-right: 1px solid #ccc;
+    }
+
+    .booking-info,
+    .image-section {
+        height: auto
+    }
+
+        .image-section img {
+            height: auto;
+            width: auto;
+            object-fit: cover;
+        }
+</style>
+
+<body class="contact-page">
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="text-left">
+                    <div class="card">
+                        <!-- Booking Information Section -->
+                        <div class="col-md-6 booking-info">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Booking Information</h5>
+                                
+                                <hr />
+                                @foreach (var book in Model.booking)
+                                {
+                                    <p class="card-text"><strong>Source:</strong> @book.Source</p>
+                                    <p class="card-text"><strong>Destination:</strong> @book.Destination</p>
+                                    <p class="card-text"><strong>Departure Date:</strong> @book.DepartureDate</p>
+                                    
+                                    <p class="card-text"><strong>Passenger Name:</strong> @book.Name</p>
+                                    <p class="card-text"><strong>Phone Number:</strong> @book.PhoneNumber</p>
+                                    <p class="card-text"><strong>Gender:</strong> @book.Passenger</p>
+                                }
+                               
+                                @if (Model.SelectedSeatNumbers != null && Model.SelectedSeatNumbers.Count > 0)
+                                {
+                                    @foreach (var seatNumber in Model.SelectedSeatNumbers)
+                                    {
+                                        <p class="card-text"><strong>Seat Number:</strong> @seatNumber</p>
+                                    }
+                                }
+                                else
+                                {
+                                    <p class="card-text">No seats selected.</p>
+                                }
+
+                                <p class="card-text"><strong>Bus Name:</strong> @Model.buses.BusName</p>
+                                <p class="card-text"><strong>Bus Number:</strong> @Model.buses.BusNumber</p>
+                                <p class="card-text"><strong>Driver Phone Number:</strong> @Model.buses.PhoneNumber</p>
+                                <p class="card-text"><strong>Ticket Price:</strong> @Model.buses.TicketPrice</p>
+                            </div>
+                        </div>
+                        <!-- Bus Image Section -->
+                        <div class="col-md-6 image-section">
+                            <img src="@Url.Content(Model.buses.Image)" alt="Bus Image" class="img-fluid rounded" />
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

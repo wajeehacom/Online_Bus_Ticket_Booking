@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    @* <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />*@
+
+    @*
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/js/site.js" asp-append-version="true" />
+    
+    <link rel="stylesheet" href="~/newProjecct.styles.css" asp-append-version="true" />s
+    <link rel="stylesheet" href="~/css/" asp-append-version="true" />
+    <link rel="stylesheet" href="~/images/" asp-append-version="true" />*@
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Regstration.styles.css" asp-append-version="true" />
+
+
+
+
+
+
+    @*  seatas*@
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+          rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet" />
+
+
+
+
+</head>
+<body>
+
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-custom fixed-top ">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">FAKHAR TRANSPORT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="@Url.Action("Index", "Home")">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Services", "Home")">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Booking", "Booking")">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="@Url.Action("AvailAbleBuses", "AddBuses")">Add Buses</a>
+                            <a class="dropdown-item" href="@Url.Action("ShowInfo1", "AddBuses")">Edit Buses</a>
+
+                        </div>
+                    </li>
+
+
+
+                    @*<li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("AvailbleBuses", "AddBuses")">Admin</a>
+
+
+
+
+
+                    </li>*@
+                </ul>
+
+                <a href="/Identity/Account/Login" class="btn btn-login mx-2">Login</a>
+
+                <a href="/Identity/Account/Register" class="btn btn-signup mx-2">Signup</a>
+
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div>
+        @RenderBody();
+    </div>
+
+
+    <
+    
+    
+
+    <footer class=" footer-page mt-5 py-4  text-center">
+
+        <div class="footer-container text-center">
+            <p>&copy; 2024 FAKHAR TRANSPORT. All rights reserved.</p>
+
+       
+        </div>
+
+    </footer>
+
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+    <!-- Footer
+    <footer class="footer">
+        <div class="container text-center">
+
+        </div>
+    </footer>
+    -->
+    
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+@*
+    <script src="~/Content/css/js/bootstrap.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>*@
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

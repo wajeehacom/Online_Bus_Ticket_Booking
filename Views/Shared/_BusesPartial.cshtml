@@ -1,0 +1,46 @@
+﻿
+
+ @model IEnumerable<Domain.Entities.Buses>
+
+@if (Model.Any())
+{
+    <table class="table table-bordered  table-light">
+        <thead>
+            <tr>
+                <th>Bus Number</th>
+                <th>Bus Name</th>
+                <th>Phone Number</th>
+                <th>Ticket Price</th>
+                <th>Departure Location</th>
+                <th>Arrival Location</th>
+                <th>Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bus in Model)
+            {
+                <tr>
+                    <td>@bus.BusNumber</td>
+                    <td>@bus.BusName</td>
+                    <td>@bus.PhoneNumber</td>
+                    <td>@bus.TicketPrice</td>
+                    <td>@bus.DepartureLocation</td>
+                    <td>@bus.ArrivalLocation</td>
+                    <td>@bus.Timing</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No buses found matching your criteria.</p>
+}
+
+
+
+<div class="text-center mt-4">
+    <a href="@Url.Action("Booking", "Booking")" class="btn btn-primary">
+        Book Your Ticket
+    </a>
+</div>

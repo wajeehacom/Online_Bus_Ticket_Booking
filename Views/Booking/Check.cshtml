@@ -1,0 +1,97 @@
+﻿@*
+@model List<Regstration.Models.Booking>
+@{
+    Layout = "_Layout";
+}
+<partial name="_MyPartialView" />
+<body class="booking-page">
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+
+<!-- Table with dynamic data from the model -->
+<h2 class="text-center text-white mt-5">Booking Information</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure Date</th>
+                <th>Bus Type</th>
+                <th>Name</th>
+                        <th>Phone Number</th>
+                <th>Passenger</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@booking.Source</td>
+                    <td>@booking.Destination</td>
+                    <td>@booking.DepartureDate</td>
+                    <td>@booking.BusType</td>
+                            <td>@booking.Name</td>
+                            <td>@booking.PhoneNumber</td>
+                    
+                    <td>@booking.Passenger</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+    </div>
+
+
+
+<!-- Background video -->
+@*<video autoplay muted loop id="background-video" style="position: fixed; z-index: -1000; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+    <source src="~/Images/v.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+
+</body>
+
+
+
+
+
+*@
+
+
+@model List<Domain.Entities.Booking>
+@{
+    Layout = "_Layout";
+}
+
+<partial name="_MyPartialView" />
+
+<body class="booking-page">
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <!-- Button to load bookings -->
+        <button id="loadBookingsButton" class="btn btn-primary btn-lg">Load Bookings</button>
+
+        <!-- Table to display bookings -->
+        <h2 class="text-center text-white mt-5">Booking Information</h2>
+        <div class="table-responsive">
+            <table id="bookingTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Departure Date</th>
+                        <th>Bus Type</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Passenger</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingTableBody">
+                    <!-- Bookings will be dynamically loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

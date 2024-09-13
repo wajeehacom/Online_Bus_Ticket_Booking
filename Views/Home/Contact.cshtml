@@ -1,0 +1,158 @@
+﻿@*
+
+
+@{
+    Layout = "_Layout";
+}
+
+<body class="contact-page">
+
+<div class="container-fluid mt-5">
+
+
+    <div class="row  justify-content-center">
+        <!-- Contact information column -->
+        <h1>Contact Us</h1>
+        <hr>
+
+
+        <div class="col-md-6 mt-5  ">
+            <div class="contact-info">
+                <h5>Address</h5>
+
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                        <path d="M8 1.25a.25.25 0 0 1 .25.25v6.5a.25.25 0 0 1-.386.214l-7-4.5a.25.25 0 0 1 0-.428l7-4.5A.25.25 0 0 1 8 1.25zm-1.18 6.472a.75.75 0 0 1 1.18-.614l4.5 3a.75.75 0 0 1 0 1.228l-4.5 3a.75.75 0 0 1-.614.104.75.75 0 0 1-.566-.342L3.864 9l2.45-1.607a.75.75 0 0 1 .106-1.18z" />
+
+                    </svg> Chicago, US
+                </p>
+                <hr>
+                <h5>Phone Number</h5>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M11.673 1.134a1 1 0 0 1 1.328 1.33l-1.33 4.653a1 1 0 0 1-.678.676l-4.652 1.33a1 1 0 0 1-1.33-1.328l1.33-4.653a1 1 0 0 1 .678-.676l4.653-1.33z" />
+                        <path fill-rule="evenodd" d="M11.354 0c.402 0 .771.24.924.608l1.488 3.962a.75.75 0 0 1-.203.779l-2.42 2.418a11.173 11.173 0 0 1-2.908-2.91l2.418-2.42a.75.75 0 0 1 .778-.203l3.961 1.488A.924.924 0 0 1 16 4.646V11.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7.66a1.75 1.75 0 0 0-3.5 0V8.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5V3.758a1.75 1.75 0 0 0-3.5 0V9.5a.5.5 0 0 1-.5.5H4a.5.5 0 0 1-.5-.5V4.646c0-.469.312-.87.766-1.014l3.962-1.488A.924.924 0 0 1 11.354 0z" />
+
+                    </svg> +00 1515151515
+                </p>
+                <hr>
+                <h5>Email</h5>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path d="M8 1a7 7 0 0 1 7 7c0 1.657-1.2 3.907-3.784 6.385-.42.372-.969.633-1.538.615-.569.018-1.118-.243-1.538-.615C5.2 11.907 4 9.657 4 8a7 7 0 0 1 7-7zm0 1a6 6 0 0 1 6 6c0 .931-.266 2.279-1.666 3.86-.572.507-1.316.788-2.103.773a3.52 3.52 0 0 1-.468-.04c-.227-.983-.756-2.244-1.76-3.626C8.567 4.61 8.292 4.11 8 4c-.292.11-.566.61-.972 1.207-1.004 1.382-1.533 2.643-1.76 3.626a3.52 3.52 0 0 1-.468.04c-.787.015-1.53-.266-2.103-.773C2.266 10.279 2 8.931 2 8a6 6 0 0 1 6-6z" />
+                        <path d="M1 4.636v6.728l6.5-5.203-6.5-1.525zm14 0l-6.5 1.525 6.5 5.203V4.636z" />
+
+                    </svg> myemail@something.com
+                </p>
+            </div>
+        </div>
+        <!-- Contact form column -->
+        <div class="col-md-6 mt-5">
+            <div class="contact-form">
+                <div class="form-group">
+                    <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <!-- Center align the button -->
+                      
+
+
+
+
+                    <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+
+                  
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+</body>
+
+
+
+*@
+
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    Layout = "_Layout";
+}
+
+<body class="contact-page">
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <!-- Contact information column -->
+            <h1>Contact Us</h1>
+            <hr>
+            @if (TempData["response"] != null && (bool)TempData["response"] == true)
+            {
+                <div class="alert alert-success" role="alert">
+                    Response Recorded Successfully!.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+            <div class="col-md-6 mt-5">
+                <div class="contact-info">
+                    <h5>Address</h5>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                            <path d="M8 1.25a.25.25 0 0 1 .25.25v6.5a.25.25 0 0 1-.386.214l-7-4.5a.25.25 0 0 1 0-.428l7-4.5A.25.25 0 0 1 8 1.25zm-1.18 6.472a.75.75 0 0 1 1.18-.614l4.5 3a.75.75 0 0 1 0 1.228l-4.5 3a.75.75 0 0 1-.614.104.75.75 0 0 1-.566-.342L3.864 9l2.45-1.607a.75.75 0 0 1 .106-1.18z" />
+                        </svg> Chicago, US
+                    </p>
+                    <hr>
+                    <h5>Phone Number</h5>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M11.673 1.134a1 1 0 0 1 1.328 1.33l-1.33 4.653a1 1 0 0 1-.678.676l-4.652 1.33a1 1 0 0 1-1.33-1.328l1.33-4.653a1 1 0 0 1 .678-.676l4.653-1.33z" />
+                            <path fill-rule="evenodd" d="M11.354 0c.402 0 .771.24.924.608l1.488 3.962a.75.75 0 0 1-.203.779l-2.42 2.418a11.173 11.173 0 0 1-2.908-2.91l2.418-2.42a.75.75 0 0 1 .778-.203l3.961 1.488A.924.924 0 0 1 16 4.646V11.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7.66a1.75 1.75 0 0 0-3.5 0V8.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5V3.758a1.75 1.75 0 0 0-3.5 0V9.5a.5.5 0 0 1-.5.5H4a.5.5 0 0 1-.5-.5V4.646c0-.469.312-.87.766-1.014l3.962-1.488A.924.924 0 0 1 11.354 0z" />
+                        </svg> +00 1515151515
+                    </p>
+                    <hr>
+                    <h5>Email</h5>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M8 1a7 7 0 0 1 7 7c0 1.657-1.2 3.907-3.784 6.385-.42.372-.969.633-1.538.615-.569.018-1.118-.243-1.538-.615C5.2 11.907 4 9.657 4 8a7 7 0 0 1 7-7zm0 1a6 6 0 0 1 6 6c0 .931-.266 2.279-1.666 3.86-.572.507-1.316.788-2.103.773a3.52 3.52 0 0 1-.468-.04c-.227-.983-.756-2.244-1.76-3.626C8.567 4.61 8.292 4.11 8 4c-.292.11-.566.61-.972 1.207-1.004 1.382-1.533 2.643-1.76 3.626a3.52 3.52 0 0 1-.468.04c-.787.015-1.53-.266-2.103-.773C2.266 10.279 2 8.931 2 8a6 6 0 0 1 6-6z" />
+                            <path d="M1 4.636v6.728l6.5-5.203-6.5-1.525zm14 0l-6.5 1.525 6.5 5.203V4.636z" />
+                        </svg> myemail@something.com
+                    </p>
+                </div>
+            </div>
+            <!-- Contact form column -->
+            <div class="col-md-6 mt-5">
+                <form method="post" action="/Home/Contact">
+                    <div class="contact-form">
+                        <div class="form-group">
+                            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                        </div>
+                        <div class="form-group text-center">
+                            <button class="btn btn-primary" type="submit">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

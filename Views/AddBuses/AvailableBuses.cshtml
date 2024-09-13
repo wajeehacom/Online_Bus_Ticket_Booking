@@ -1,0 +1,234 @@
+﻿@*@model Regstration.Models.Buses
+
+@{
+    Layout = "_Layout2";
+    ViewData["Title"] = "Available Buses";
+}
+
+<body class="booking-page">
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <!-- Your main content goes here -->
+        <h1 class="text-center">Welcome to FAKHAR TRANSPORT</h1>
+        <p class="text-center">We provide convenient and reliable bus transportation services.</p>
+    </div>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container text-center">
+           
+
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
+
+            <!-- Booking Form -->
+            <form method="post" enctype="multipart/form-data" asp-action="AvailableBuses">
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="BusNumber" class="control-label">Bus Number</label>
+                            <input asp-for="BusNumber" class="form-control" placeholder="Bus Number" required />
+                            <span asp-validation-for="BusNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="BusName" class="control-label">Bus Name</label>
+                            <input asp-for="BusName" class="form-control" placeholder="Bus Name" required />
+                            <span asp-validation-for="BusName" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                            <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" required />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="TicketPrice" class="control-label">Ticket Price</label>
+                            <input asp-for="TicketPrice" class="form-control" placeholder="Ticket Price" required />
+                            <span asp-validation-for="TicketPrice" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Image" class="control-label">Image</label>
+                            <input asp-for="Image" type="file" class="form-control" />
+                            <span asp-validation-for="Image" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Timing" class="control-label">Timing</label>
+                            <input asp-for="Timing" type="time" class="form-control" required />
+                            <span asp-validation-for="Timing" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary btn-lg">Add Bus</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+
+
+
+*@
+
+                            @*using ajex*@
+
+@model Domain.Entities.Buses
+
+@{
+    Layout = "_Layout2";
+    ViewData["Title"] = "Available Buses";
+}
+
+<body class="booking-page">
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <!-- Your main content goes here -->
+        <h1 class="text-center">Welcome to FAKHAR TRANSPORT</h1>
+        <p class="text-center">We provide convenient and reliable bus transportation services.</p>
+    </div>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container text-center">
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
+
+            <div id="successMessage" class="alert alert-success" style="display: none;"></div>
+
+            <!-- Booking Form -->
+            <form id="busForm" enctype="multipart/form-data">
+
+
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="ArrivalLocation" class="control-label">To</label>
+                            <input asp-for="ArrivalLocation" class="form-control" placeholder="Arrival Location" required />
+                            <span asp-validation-for="ArrivalLocation" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="DepartureLocation" class="control-label">Fro  m</label>
+                            <input asp-for="DepartureLocation" class="form-control" placeholder="Depparture Location" required />
+                            <span asp-validation-for="DepartureLocation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="BusNumber" class="control-label">Bus Number</label>
+                            <input asp-for="BusNumber" class="form-control" placeholder="Bus Number" required />
+                            <span asp-validation-for="BusNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="BusName" class="control-label">Bus Name</label>
+                            <input asp-for="BusName" class="form-control" placeholder="Bus Name" required />
+                            <span asp-validation-for="BusName" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                            <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" required />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="TicketPrice" class="control-label">Ticket Price</label>
+                            <input asp-for="TicketPrice" class="form-control" placeholder="Ticket Price" required />
+                            <span asp-validation-for="TicketPrice" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Image" class="control-label">Image</label>
+                            <input asp-for="Image" type="file" class="form-control" />
+                            <span asp-validation-for="Image" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Timing" class="control-label">Timing</label>
+                            <input asp-for="Timing" type="time" class="form-control" required />
+                            <span asp-validation-for="Timing" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary btn-lg">Add Bus</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#busForm').submit(function (event) {
+                event.preventDefault();
+
+                var formData = new FormData(this);
+                // // Creates a new FormData object, which captures all the form data in a format that can be sent via AJAX.
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("AvailableBuses", "AddBuses")',
+                    data: formData,
+                    //Sends the form data to the server. formData contains all the input values from the form.
+                    contentType: false,
+                    //This option tells jQuery not to set a Content-Type header for the AJAX request.
+                    processData: false,
+                    //this option tells jQuery not to process or transform the data before sending it.
+                    success: function (response) {
+                        // Show success message
+                        $('#successMessage').text('Bus added successfully!').show();
+
+                        // Clear the form fields
+                        $('#busForm')[0].reset();
+                    },
+                    error: function (response) {
+                        // Show error message
+                        alert('Error: ' + response.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>

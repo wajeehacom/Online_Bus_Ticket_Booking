@@ -1,0 +1,129 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+
+
+<!-- Carousel -->
+<body class="Buses">
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner mt-5">
+        <div class="carousel-item active">
+                <img src="~/Images/s33.png" class="d-block w-100" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+                <img src="~/Images/s2.png" class="d-block w-100" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+                <img src="~/Images/s3.png" class="d-block w-100" alt="Image 3">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+<div class="container mt-5 ">
+    <div class="row justify-content-center ">
+        <div class="col-md-8">
+            <h1 class="text-center mb-4 ">Bus Timing Schedule of SkyWays Buses</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Routes</th>
+                        <th>First Departure of Buses</th>
+                        <th>Last Departure of Buses</th>
+                        <th>Travel Duration</th>
+                        <th>Book Ticket</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lahore to Multan</td>
+                        <td>5:00 AM</td>
+                        <td>02:00 AM</td>
+                        <td>04 Hours</td>
+                            <td><a href="@Url.Action("Booking", "Booking")" class="btn btn-primary">Book</a></td>
+
+                    </tr>
+                    <tr>
+                        <td>Lahore to Faisalabad</td>
+                        <td>7:00 AM</td>
+                        <td>11:00 PM</td>
+                        <td>2 Hours 15 Minutes</td>
+                            <td><a href="@Url.Action("Booking", "Booking")" class="btn btn-primary">Book</a></td>
+                    </tr>
+                    <tr>
+                        <td>Multan to Islamabad</td>
+                        <td>7:00 AM</td>
+                        <td>12:00 AM</td>
+                        <td>06 Hours 30 Minutes</td>
+                            <td><a href="@Url.Action("Booking", "Booking")" class="btn btn-primary">Book</a></td>
+                    </tr>
+                    <tr>
+                        <td>Islamabad to Karachi</td>
+                        <td>10:00 AM</td>
+                        <td>11:00 PM</td>
+                        <td>18 Hours 30 Minutes</td>
+                            <td><a href="@Url.Action("Booking", "Booking")" class="btn btn-primary">Book</a></td>
+                    </tr>
+                    <tr>
+                        <td>Lahore to Karachi</td>
+                        <td>10:00 AM</td>
+                        <td>12:00 AM</td>
+                        <td>16 Hours 30 Minutes</td>
+                            <td><a href="@Url.Action("Booking", "Booking")" class="btn btn-primary">Book</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4">SkyWays Bus Routes and Terminals</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Route</th>
+                        <th>Terminal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Islamabad – Bahawalpur</td>
+                        <td>Motorway M4 – M2</td>
+                    </tr>
+                    <tr>
+                        <td>Lahore – DG Khan</td>
+                        <td>Motorway M-3 , Multan</td>
+                    </tr>
+                    <tr>
+                        <td>Lahore – Bahawalpur</td>
+                        <td>M-3 , Khanewal, Jahanian</td>
+                    </tr>
+                    <tr>
+                        <td>Islamabad – Hunza</td>
+                        <td>Naran</td>
+                    </tr>
+                    <tr>
+                        <td>Lahore – Swat</td>
+                        <td>Motorway M-2 , M-1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+

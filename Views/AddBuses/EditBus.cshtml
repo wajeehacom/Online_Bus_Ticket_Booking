@@ -1,0 +1,70 @@
+﻿@model Domain.Entities.Buses
+
+@{
+    Layout = "_Layout1";
+    ViewData["Title"] = "Edit Bus";
+}
+
+<div class="container mt-5 pt-5">
+    <h2 class="text-center">Edit Bus Details</h2>
+    <form method="post" enctype="multipart/form-data" asp-action="EditBus">
+        <input type="hidden" name="originalBusNumber" value="@Model.BusNumber" />
+
+
+
+
+
+        <div class="form-group">
+            <label asp-for="ArrivalLocation" class="control-label">To</label>
+            <input asp-for="ArrivalLocation" class="form-control" placeholder="Bus Number" required />
+            <span asp-validation-for="ArrivalLocation" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DepartureLocation" class="control-label">From</label>
+            <input asp-for="DepartureLocation" class="form-control" placeholder="Bus Number" required />
+            <span asp-validation-for="DepartureLocation" class="text-danger"></span>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <label asp-for="BusNumber" class="control-label">Bus Number</label>
+            <input asp-for="BusNumber" class="form-control" placeholder="Bus Number" required />
+            <span asp-validation-for="BusNumber" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="BusName" class="control-label">Bus Name</label>
+            <input asp-for="BusName" class="form-control" placeholder="Bus Name" required />
+            <span asp-validation-for="BusName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+            <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" required />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TicketPrice" class="control-label">Ticket Price</label>
+            <input asp-for="TicketPrice" class="form-control" placeholder="Ticket Price" required />
+            <span asp-validation-for="TicketPrice" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Image" class="control-label">Image</label>
+            <input asp-for="Image" type="file" class="form-control" />
+            <span asp-validation-for="Image" class="text-danger"></span>
+            @if (!string.IsNullOrEmpty(Model.Image))
+            {
+                <img src="@Model.Image" alt="Bus Image" class="img-thumbnail mt-2" style="max-width: 150px;" />
+            }
+        </div>
+        <div class="form-group">
+            <label asp-for="Timing" class="control-label">Timing</label>
+            <input asp-for="Timing" class="form-control" placeholder="Timing" required />
+            <span asp-validation-for="Timing" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

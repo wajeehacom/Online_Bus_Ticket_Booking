@@ -1,0 +1,84 @@
+﻿
+
+
+
+
+
+@{
+    Layout = "_Layout2";
+    ViewData["Title"] = "Search Buses";
+}
+
+<body class="contact-page">
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center   search-heading">Search Buses</h1>
+        <p class="text-center   search-heading">Find the best bus for your trip.</p>
+    </div>
+
+    <section class="search-section">
+        <div class="container text-center">
+            <form id="searchForm">
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="departureLocation" class="search-label">From</label>
+                            <input type="text" id="departureLocation" class="form-control" placeholder="Departure Location" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="arrivalLocation" class="search-label">To</label>
+                            <input type="text" id="arrivalLocation" class="form-control" placeholder="Arrival Location" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="time" class="search-label">Time</label>
+                            <input type="time" id="time" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-3 ">
+                        <button type="submit" class="btn btn-primary btn-lg">Search</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="searchResults" class="mt-4">
+                <!-- Search results will be displayed here -->
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Code inside here runs when the DOM is fully loaded
+            $("#searchForm").on("submit", function (e) {
+
+                e.preventDefault();
+                // Code inside here runs when the form is submitted
+                var departureLocation = $("#departureLocation").val();
+                var arrivalLocation = $("#arrivalLocation").val();
+                var time = $("#time").val();
+
+                $.ajax({
+                    url: '@Url.Action("SearchBuses", "AddBuses")', 
+                    //Specifies the URL where the AJAX request is sent. url razor helper method
+                    type: 'POST',
+                    data: {
+                        departureLocation: departureLocation,
+                        arrivalLocation: arrivalLocation,
+                        time: time
+                    },
+                    // Contains the data sent to the server in the request.
+                    success: function (response) {
+                        $("#searchResults").html(response);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>

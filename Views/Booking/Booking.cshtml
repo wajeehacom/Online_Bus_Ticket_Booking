@@ -1,0 +1,227 @@
+﻿
+@model Domain.Entities.Booking;
+
+@{
+    Layout = "_Layout2";
+}
+
+<body class="booking-page">
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <!-- Your main content goes here -->
+        <h1 class="text-center">Welcome to FAKHAR TRANSPORT</h1>
+        <p class="text-center">We provide convenient and reliable bus transportation services.</p>
+    </div>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+
+        <div class="video-container">
+            <partial name="_MyPartialView" />
+
+            <div class="container text-center text-white position-absolute top-50 start-50 translate-middle">
+                <h2 class="mb-4">Book Your Bus Ticket</h2>
+
+
+
+
+                <!-- Booking Form -->
+                <form method="post" action="/Booking/Booking" >
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label for="departure">From</label>
+                            <input type="text" id="departure" name="F" class="form-control" placeholder="Departure location" list="departureOptions" >
+                            <datalist id="departureOptions">
+                                <option value="Multan">Multan</option>
+                                <option value="Sialkot">Sialkot</option>
+                                <option value="Karachi">Karachi</option>
+                                <!-- Add more options as needed -->
+                            </datalist>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="arrival">To</label>
+                            <input type="text" id="arrival" name="T" class="form-control" placeholder="Arrival location" list="arrivalOptions" >
+                            <datalist id="arrivalOptions">
+                                <option value="Lahore">Lahore</option>
+                                <option value="Multan">Multan</option>
+                                <option value="Karachi">Karachi</option>
+                                <!-- Add more options as needed -->
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label for="date">Departure Date</label>
+                            <input type="date" id="date" name="D" class="form-control" >
+                        </div>
+                        <div class="col-md-6">
+                            <label for="bus-type">Bus Type</label>
+                            <select id="bus-type" name="B" class="form-select" >
+                                <option value="Fakhar Transport">Fakhar Transport</option>
+                                <option value="SkyMovers">SkyMovers</option>
+                                <option value="Faisal Movers">Faisal Movers</option>
+                                <option value="Daewoo">Daewoo</option>
+                                <option value="Niazi Express">Niazi Express</option>
+                                <!-- Add more options for different bus types if needed -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="N" class="form-control" placeholder="Your name" >
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="Ph" class="form-control" placeholder="Your phone number" >
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label for="passenger">Gender</label>
+                            <select id="passenger" name="Pas" class="form-select" >
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <!-- Add more options for different numbers of passengers if needed -->
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary btn-lg">Search Buses</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+@*
+
+
+
+                        @model Regstration.Models.Booking
+
+@{
+    Layout = "_Layout2";
+}
+
+<body class="booking-page">
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center">Welcome to FAKHAR TRANSPORT</h1>
+        <p class="text-center">We provide convenient and reliable bus transportation services.</p>
+    </div>
+
+    <section class="booking-section">
+        <div class="video-container">
+            <partial name="_MyPartialView" />
+
+            <div class="container text-center text-white position-absolute top-50 start-50 translate-middle">
+                <h2 class="mb-4">Book Your Bus Ticket</h2>
+
+                <!-- Booking Form -->
+                <form method="post" action="/Booking/Booking">
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="Source"></label>
+                            <input asp-for="Source" class="form-control" placeholder="Departure location" list="departureOptions">
+                            <datalist id="departureOptions">
+                                <option value="Multan">Multan</option>
+                                <option value="Sialkot">Sialkot</option>
+                                <option value="Karachi">Karachi</option>
+                            </datalist>
+                            <span asp-validation-for="Source" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Destination"></label>
+                            <input asp-for="Destination" class="form-control" placeholder="Arrival location" list="arrivalOptions">
+                            <datalist id="arrivalOptions">
+                                <option value="Lahore">Lahore</option>
+                                <option value="Multan">Multan</option>
+                                <option value="Karachi">Karachi</option>
+                            </datalist>
+                            <span asp-validation-for="Destination" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="DepartureDate"></label>
+                            <input asp-for="DepartureDate" class="form-control">
+                            <span asp-validation-for="DepartureDate" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="BusType"></label>
+                            <select asp-for="BusType" class="form-select">
+                                <option value="Fakhar Transport">Fakhar Transport</option>
+                                <option value="SkyMovers">SkyMovers</option>
+                                <option value="Faisal Movers">Faisal Movers</option>
+                                <option value="Daewoo">Daewoo</option>
+                                <option value="Niazi Express">Niazi Express</option>
+                            </select>
+                            <span asp-validation-for="BusType" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="Name"></label>
+                            <input asp-for="Name" class="form-control" placeholder="Your name">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="PhoneNumber"></label>
+                            <input asp-for="PhoneNumber" class="form-control" placeholder="Your phone number">
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="Passenger"></label>
+                            <select asp-for="Passenger" class="form-select">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <span asp-validation-for="Passenger" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary btn-lg">Search Buses</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+   
+</body>
+
+*@
+
+
+
+
