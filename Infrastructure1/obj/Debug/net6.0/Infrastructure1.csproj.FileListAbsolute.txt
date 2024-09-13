@@ -1,0 +1,17 @@
+D:\MVC\Regstration\Infrastructure1\bin\Debug\net6.0\Infrastructure1.deps.json
+D:\MVC\Regstration\Infrastructure1\bin\Debug\net6.0\Infrastructure1.dll
+D:\MVC\Regstration\Infrastructure1\bin\Debug\net6.0\Infrastructure1.pdb
+D:\MVC\Regstration\Infrastructure1\bin\Debug\net6.0\Application.dll
+D:\MVC\Regstration\Infrastructure1\bin\Debug\net6.0\Domain.dll
+D:\MVC\Regstration\Infrastructure1\bin\Debug\net6.0\Application.pdb
+D:\MVC\Regstration\Infrastructure1\bin\Debug\net6.0\Domain.pdb
+D:\MVC\Regstration\Infrastructure1\obj\Debug\net6.0\Infrastructure1.csproj.AssemblyReference.cache
+D:\MVC\Regstration\Infrastructure1\obj\Debug\net6.0\Infrastructure1.GeneratedMSBuildEditorConfig.editorconfig
+D:\MVC\Regstration\Infrastructure1\obj\Debug\net6.0\Infrastructure1.AssemblyInfoInputs.cache
+D:\MVC\Regstration\Infrastructure1\obj\Debug\net6.0\Infrastructure1.AssemblyInfo.cs
+D:\MVC\Regstration\Infrastructure1\obj\Debug\net6.0\Infrastructure1.csproj.CoreCompileInputs.cache
+D:\MVC\Regstration\Infrastructure1\obj\Debug\net6.0\Infrastructure1.csproj.CopyComplete
+D:\MVC\Regstration\Infrastructure1\obj\Debug\net6.0\Infrastructure1.dll
+D:\MVC\Regstration\Infrastructure1\obj\Debug\net6.0\refint\Infrastructure1.dll
+D:\MVC\Regstration\Infrastructure1\obj\Debug\net6.0\Infrastructure1.pdb
+D:\MVC\Regstration\Infrastructure1\obj\Debug\net6.0\ref\Infrastructure1.dll
